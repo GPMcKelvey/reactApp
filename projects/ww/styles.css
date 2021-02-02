@@ -1,0 +1,33 @@
+body {
+    display: inline-block;
+    float: none;
+    margin: auto;
+    text-align: center;
+    background-image: url("../00-assets/wwBackground.jpg");
+    background-position: right bottom, top left;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.funkoFeat {
+    display: inline-block;
+    float: none;
+    margin: auto;
+    text-align: center; 
+    background-image: url("../00-assets/nightSky.gif");
+    background-size: 100%;
+    background-position: right bottom, top left;
+}
+
+#expecto {
+    color: rgb(255, 255, 255);
+}
+#gold {
+    color: rgb(255, 255, 255);
+}
+#goldInfo {
+    color: rgb(255, 255, 255);
+}
+#goldButton {
+    color: rgb(255, 255, 255);
+}
