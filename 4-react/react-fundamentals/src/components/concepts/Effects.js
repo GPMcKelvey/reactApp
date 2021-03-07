@@ -47,12 +47,8 @@ const SampleEffect = () => {
     };
 
     useEffect(()=> {
-        if(timerRunning) {
             console.log("I just started running.")
-         } else {
-             console.log("I've got to get back to Jenny.")
-         }
-    });
+          }, [timerRunning]);
  
 
     return(
