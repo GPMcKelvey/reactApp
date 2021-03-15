@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import NytResults from './NytResults';
 
 const baseURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 const key = 'x8PXDV7Ne4BoGZoMZQ6DR57zWTjk7ugl'
@@ -27,9 +28,24 @@ const NytApp = () => {
     };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
+        setPageNumber(0);
         fetchResults();
+        event.preventDefault();
     };
+
+    const changePageNumber = (event, direction) => {
+        event.preventDefault()
+        if (direction === 'down') {
+            if (pageNumber > 0){
+                setPageNumber(pageNumber - 1);
+                fetchResults();
+            }
+        }
+        if (direction === 'up') {
+            setPageNumber(pageNumber + 1);
+            fetchResults();
+        }
+    }
 
     return(
 
@@ -47,6 +63,9 @@ const NytApp = () => {
                     <br />
                     <button className='submit'>Submit</button>
                 </form>
+                {
+                    results.length> 0 ? <NytResults results = {results} changePage={changePageNumber} /> : null
+                }
             </div>
         </div>
     );
